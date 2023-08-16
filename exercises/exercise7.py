@@ -8,9 +8,7 @@ y en el mismo orden.
 
 lista = ["casa", "perro", "pato", "gato"]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+tupla = tuple(lista)
 
 assert tupla == ("casa", "perro", "pato", "gato")
 
@@ -22,9 +20,7 @@ y en el mismo orden.
 
 tupla = "casa", "perro", "pato", "gato", "tenedor"
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+lista = list(tupla)
 
 assert lista == ["casa", "perro", "pato", "gato", "tenedor"]
 
@@ -35,9 +31,10 @@ Desempaquetar la siguiente tupla en las variables a, b y c
 
 tupla = ("primer", 25, [1, 2, 3])
 
-# COMPLETAR - INICIO
+a, b, c = tupla
 
-# COMPLETAR - FIN
+# Otra opción
+#a = tupla[0]
 
 assert a == "primer" and b == 25 and c == [1, 2, 3]
 
@@ -48,9 +45,10 @@ Desempaquetar la siguiente tupla y luego sumar sus valores
 
 tupla = (87, 98, 35, 67, 4, 9)
 
-# COMPLETAR - INICIO
+x, y, z, w, k, r = tupla
+total = x+y+z+w+k+r
 
-# COMPLETAR - FIN
+# total = sum(tupla) sin desempaquetar
 
 assert total == 300
 
@@ -62,9 +60,8 @@ Restricción: Utilizar f-Strings.
 
 lista = ["esta", "mañana", "sali", "a", "correr"]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+a, b, c, _, e = lista #desempaquetado parcial
+string_concatenado = f"{a} {b} {c} a {e}"
 
 assert string_concatenado == "esta mañana sali a correr"
 
@@ -76,9 +73,7 @@ Restricción: Utilizar desempaquetado con comodines
 
 tupla = (73, 45, 344, 3434, 2)
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+primer, *_ = tupla  #desempaquetado parcial ignorando todo el resto
 
 assert primer == 73
 
@@ -90,9 +85,8 @@ Restricción: Utilizar desempaquetado con comodines
 
 lista = [73, 45, 344, 3434, 2]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+primer, *_, ultimo = lista
+suma = primer + ultimo
 
 assert suma == 75
 
@@ -105,8 +99,7 @@ Restricción: Utilizar desempaquetado con comodines y f-Strings
 
 tupla = ("anoche", "fui", "a", "la", "fiesta", "pero", "no", "pude", "entrar")
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+primer, segundo, tercer, cuarto, quinto, *_ = tupla 
+string_concatenado = f"{primer} {segundo} {tercer} {cuarto} {quinto}"
 
 assert string_concatenado == "anoche fui a la fiesta"

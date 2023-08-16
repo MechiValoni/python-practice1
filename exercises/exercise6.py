@@ -5,9 +5,11 @@ Inicializar una lista vacía y luego agregarle 4 elementos cualquiera
 Restricción: Utilizar el método append
 """
 
-# COMPLETAR - INICIO
-lista_01 = 
-# COMPLETAR - FIN
+lista_01 = []
+lista_01.append('Juan')
+lista_01.append('Mirta')
+lista_01.append(10)
+lista_01.append(5.5)
 
 assert len(lista_01) == 4
 
@@ -19,9 +21,7 @@ Restricción: Utilizar el método pop
 
 lista = ["ho", "la", 81, 6, 42, "como", "estas?"]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+elemento_extraido = lista.pop(3)
 
 assert elemento_extraido == 6
 
@@ -35,9 +35,10 @@ lista_a = [1, 2, 3]
 lista_b = ["4", "5", "6"]
 lista_c = ["siete", "ocho", "nueve"]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+listas_concatenadas_01 = []
+listas_concatenadas_01.extend(lista_a)
+listas_concatenadas_01.extend(lista_b)
+listas_concatenadas_01.extend(lista_c)
 
 assert listas_concatenadas_01 == [1, 2, 3, "4", "5", "6", "siete", "ocho", "nueve"]
 
@@ -50,9 +51,7 @@ Restricción: Utilizar el método insert
 variable_01 = 2
 lista_nueva = [0, 1, 3, 4]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+lista_nueva.insert(2,variable_01)
 
 assert lista_nueva == [0, 1, 2, 3, 4]
 
@@ -64,9 +63,9 @@ Restricción: Utilizar el método append junto al indexado simple
 
 lista = ["ho", 3.1416, 42, 81, 6, "la"]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+lista_primero_y_ultimo = []
+lista_primero_y_ultimo.append(lista[0])
+lista_primero_y_ultimo.append(lista[-1])
 
 assert lista_primero_y_ultimo == ["ho", "la"]
 
@@ -78,9 +77,10 @@ Restricción: Utilizar el método append junto al indexado simple
 
 lista = ["ho", 3.1416, "la", 81, 6, 42]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+lista_primeros = []
+lista_primeros.append(lista[0])
+lista_primeros.append(lista[1])
+lista_primeros.append(lista[2])
 
 assert lista_primeros == ["ho", 3.1416, "la"]
 
@@ -92,9 +92,9 @@ Restricción: Utilizar indexado múltiple
 
 lista = ["ho", 3.1416, "la", 81, 6, 42]
 
-# COMPLETAR - INICIO
+lista = ["ho", 3.1416, "la", 81, 6, 42]
 
-# COMPLETAR - FIN
+lista_primeros = lista[0:3]
 
 assert lista_primeros == ["ho", 3.1416, "la"]
 
@@ -107,9 +107,9 @@ Restricción: Utilizar el método extend junto al indexado múltiple
 
 lista = ["ho", "la", 81, 6, 42, "como", "estas?"]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+lista_primeros_y_ultimos = []
+lista_primeros_y_ultimos.extend(lista[0:2])
+lista_primeros_y_ultimos.extend(lista[5:7])
 
 assert lista_primeros_y_ultimos == ["ho", "la", "como", "estas?"]
 
@@ -122,9 +122,7 @@ Restricción: Utiliar el operador +
 lista_01 = [0, 1, 2, 3]
 lista_02 = [5, 6]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+lista_concatenada = lista_01+lista_02
 
 assert lista_concatenada == [0, 1, 2, 3, 5, 6]
 
@@ -136,9 +134,7 @@ Restricción: Utiliar el operador *
 
 lista_01 = [0, 1, 0, 1, 0, 1]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+lista_duplicada = lista_01*3
 
 assert lista_duplicada == [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
 
@@ -151,9 +147,7 @@ Restricción: Utiliar el operador in
 elemento = 1.0
 lista = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1.0, 1, 0, 1, 0, 1]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+variable_booleana = elemento in lista
 
 assert variable_booleana
 
@@ -166,9 +160,7 @@ Restricción: Utilizar el operador ==
 lista_01 = [1, 2, 3, 4.5, 6, 7]
 lista_02 = [1, 3, 2, 4, 5, 6, 7]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+son_iguales = lista_01 == lista_02
 
 assert not son_iguales
 
@@ -177,14 +169,12 @@ assert not son_iguales
 Se cuenta con una lista de elementos booleanos que corresponden a las notas de los exámenes
 cuatrimestrales de un alumno (True si está aprobado y False en caso contrario)
 Determinar si el alumno no tiene examenes aprobados.
-Restricción: Utilizar el método any
+Restricción: Utilizar la función any
 """
 
 notas = [False, False, False, False, False, False, False, False, False]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+no_tiene_examenes_aprobados = not any(notas)
 
 assert no_tiene_examenes_aprobados
 
@@ -193,13 +183,11 @@ assert no_tiene_examenes_aprobados
 Se cuenta con una lista de elementos booleanos que corresponden a las notas de los exámenes
 cuatrimestrales de un alumno (True si está aprobado y False en caso contrario)
 Determinar si el alumno ha aprobado todos sus exámenes.
-Restricción: Utilizar el método all
+Restricción: Utilizar la función all
 """
 
 notas = [True, True, False, True, True, True, True, True, True, True, True, True]
 
-# COMPLETAR - INICIO
-
-# COMPLETAR - FIN
+tiene_todo_aprobado = all(notas)
 
 assert not tiene_todo_aprobado
